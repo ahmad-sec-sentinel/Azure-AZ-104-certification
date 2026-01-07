@@ -35,6 +35,15 @@ The resource group created can be verified from the AZURE portal.
   - Portal: **Delete resource group** → type RG name to confirm.   
   - CLI: `az group delete --name <resource-group-name> --yes`.  
 
+## Multiple resource group creation --- Automated using bash scripting
+
+```bash
+for name in rg-westus-1 rg-westus-2 rg-westus-3; do
+  az group create --name $name --location westus --output table
+done
+```
+<img src="multi-rg-create-script.png" alt="Resource groups created using script" width="80%">
+
 ---
 
 ## Key Learnings
