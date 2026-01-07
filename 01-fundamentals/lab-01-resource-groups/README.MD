@@ -99,6 +99,18 @@ For example-
 - If specific resources block deletion (for example, failed deployments, dependent resources, or provider issues), delete or fix those resources individually, then retry RG deletion; persistent issues may require Azure Support.  
 
 ---
+## Azure CLI vs Azure PowerShell
+
+| **Attribute** | **Azure CLI** | **Azure PowerShell** |
+|---|---:|---:|
+| **Primary shell / platform** | **Bash/zsh/Cloud Shell** (CLI binary) | **PowerShell Core / Windows PowerShell** (Az module) |
+| **Syntax style** | **POSIX-style** commands (az <verb> <noun> --flags) | **PowerShell cmdlets** (Verb-Noun, object pipelines) |
+| **Object handling** | **JSON/text** output; parse with `--query` or tools like `jq` | **Rich PowerShell objects** for native pipeline manipulation |
+| **Cross-platform support** | **Cross-platform** and Cloud Shell friendly | **Cross-platform** with PowerShell Core; best Windows integration |
+| **Best use cases** | **Ad-hoc CLI tasks, CI/CD, shell scripts** | **Complex automation, advanced scripting, Windows environments** |
+
+
+---
 ## Pro Insight
 
 Resource groups are logical containers only; their location is metadata for the group itself, not a hard constraint on where contained resources live. VMs, databases, and services can be placed in any region even if the RG is in let say, West US, but doing so creates governance, cost, and performance trade‑offs that should be avoided.
