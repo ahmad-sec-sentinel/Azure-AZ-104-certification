@@ -65,8 +65,8 @@ For example-
 
 <img src="multi-rg-powershell.png" alt="Switching to power shell" width="80%"> 
 
-3. Viewing all the resource groups
-`get-AzResourceGroup | format-table'  
+3. Viewing all the resource groups  
+`get-AzResourceGroup | format-table`
 
 4. Filtering resource groups by location
 `get-AzResourceGroup -l southcentralus  | format-table`  
@@ -77,11 +77,6 @@ For example-
 
 
 
-
-
-
-
-2. 
 ## Key Learnings
 
 - RG deletion is **asynchronous**: Azure Resource Manager determines dependency order, deletes nested resources first, then parent resources, so the RG can stay in *Deleting* state for some time.  
@@ -100,3 +95,11 @@ For example-
 - Verify RBAC: ensure the user or service principal has RG delete permission; missing rights appear as authorization errors in activity log or CLI output.   
 - If specific resources block deletion (for example, failed deployments, dependent resources, or provider issues), delete or fix those resources individually, then retry RG deletion; persistent issues may require Azure Support.  
 
+---
+## Pro Insight
+
+Resource groups are logical containers only; their location is metadata for the group itself, not a hard constraint on where contained resources live. VMs, databases, and services can be placed in any region even if the RG is in let say, West US, but doing so creates governance, cost, and performance trade‑offs that should be avoided.
+
+Why to avoid: mixes governance, billing, and recovery boundaries; increases management risk.
+
+Latency: cross‑region UI-DB adds ROUND TRIP TIME, higher commit latency and egress costs.
