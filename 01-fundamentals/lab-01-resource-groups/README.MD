@@ -44,6 +44,8 @@ done
 ```
 <img src="multi-rg-create-script.png" alt="Resource groups created using script" width="80%">
 
+<img src="multi-rg-portal-view.png" alt="Resource groups created using script" width="80%">
+
 ---
 
 ## Key Learnings
