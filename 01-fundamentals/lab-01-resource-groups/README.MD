@@ -23,12 +23,12 @@ Demonstrate end‑to‑end lifecycle management of Azure Resource Groups (create
 az group create --name app-dev-rg --location eastus --tags Environment=Dev Owner=Ahmad
 ```
 
-<img src="rg-creation-CLI.png" alt="Resource group created using Cloud shell" width="80%">
-- Listed and verified existing RGs and tags using:  
-  - `az group list --query "[].{Name:name, Location:location, Tags:tags}" -o table`. 
-- Deleted temporary / lab RGs to clean up costs:  
-  - Portal: **Delete resource group** → type RG name to confirm. 
-  - CLI: `az group delete --name <resource-group-name> --yes`.
+<img src="rg-creation-CLI.png" alt="Resource group created using Cloud shell" width="80%">  
+- Listed and verified existing RGs and tags using:   
+  - `az group list --query "[].{Name:name, Location:location, Tags:tags}" -o table`.   
+- Deleted temporary / lab RGs to clean up costs:    
+  - Portal: **Delete resource group** → type RG name to confirm.   
+  - CLI: `az group delete --name <resource-group-name> --yes`.  
 
 ---
 
