@@ -24,6 +24,11 @@ az group create --name app-dev-rg --location eastus --tags Environment=Dev Owner
 ```
 
 <img src="rg-creation-CLI.png" alt="Resource group created using Cloud shell" width="80%">  
+
+The resource group created can be verified from the AZURE portal.
+
+<img src="rg-portal.png" alt="Resource group created using Cloud shell" width="80%">
+
 - Listed and verified existing RGs and tags using:   
   - `az group list --query "[].{Name:name, Location:location, Tags:tags}" -o table`.   
 - Deleted temporary / lab RGs to clean up costs:    
