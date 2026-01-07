@@ -46,7 +46,7 @@ done
 
 <img src="multi-rg-portal-view.png" alt="Resource groups created using script" width="80%">
 
-**Deleting all resource group created above**
+**Deleting all resource group created above**  
 `az group list --query "[?location=='westus'].name" -o tsv | xargs -I {} az group delete --name {} --yes`
 
 ---
