@@ -47,7 +47,23 @@ done
 <img src="multi-rg-portal-view.png" alt="Resource groups created using script" width="80%">
 
 ---
+## Commands to create resource group using POWERSHELL
+1. To create a resource group  
+```
+New-AzResourceGroup -n <resource-group-name> -l <location>
+```
+For example- 
+```
+ New-AzResourceGroup -n rg-powershell -l southcentralUS
+```
+<img src="powershell.png" alt="Switching to power shell" width="80%">  
 
+<img src="rg-powershell.png" alt="using power shell to create a resource group" width="80%">
+
+
+
+
+2. 
 ## Key Learnings
 
 - RG deletion is **asynchronous**: Azure Resource Manager determines dependency order, deletes nested resources first, then parent resources, so the RG can stay in *Deleting* state for some time.  
