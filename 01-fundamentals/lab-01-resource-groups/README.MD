@@ -58,7 +58,25 @@ For example-
 ```
 <img src="powershell.png" alt="Switching to power shell" width="80%">  
 
-<img src="rg-powershell.png" alt="using power shell to create a resource group" width="80%">
+<img src="rg-power-shell.png" alt="using power shell to create a resource group" width="80%">
+
+2. Creating three resource groups in South Central US Region using the below command:  
+`New-AzResourceGroup -n rg-ps1 -l southcentralUS && New-AzResourceGroup -n rg-ps2 -l southcentralUS && New-AzResourceGroup -n rg-ps3 -l southcentralUS`  
+
+<img src="multi-rg-powershell.png" alt="Switching to power shell" width="80%"> 
+
+3. Viewing all the resource groups
+`get-AzResourceGroup | format-table'  
+
+4. Filtering resource groups by location
+`get-AzResourceGroup -l southcentralus  | format-table`  
+
+<img src="rg-view-powershell.png" alt="Switching to power shell" width="80%"> 
+
+
+
+
+
 
 
 
