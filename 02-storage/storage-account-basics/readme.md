@@ -41,6 +41,16 @@ Use case: store semi‑structured, schema‑less data (telemetry, user metadata,
 - high‑performance page blobs used for Azure managed disks and I/O‑intensive workloads
 -  they deliver low latency, high IOPS, and durable random read/write access for VM disks and databases
 
+**Inorder to compare the various storage services ,use the AZURE PRICING CALCULATOR**  
+              https://azure.microsoft.com/en-us/pricing/calculator/
+
+
+## Features of Azure Storage account
+- **Security** -Data fully encrypted at 2 levels- at rest and in transit.
+- **Scalability** -Need not worry about storage space running out. Scale as per requirement and demand.
+- **Accessibility** - Data can be accessed over HTTP/HTTPS across the world. But since data is encrypted , it prevents chance of data leakage. Moreover access to storage services are by default set to private. Data security follows principle of collective responsibility. Both Azure as well as the organisation bear responsibility for data safety and data integrity. 
+- **High availability** -Data replicated across multiple data centres (Concept of data redundancy. I will talk about it in the next section.)
+
 ## Redundancy
 Azure Storage replicates data to protect against hardware failures, outages, and regional disasters; redundancy ensures durability and availability so applications keep running and data is recoverable.  
 
