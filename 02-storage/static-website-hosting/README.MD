@@ -25,7 +25,8 @@
 - Accessed the site using the static website endpoint URL from the storage account.   
 
  <img src="screenshots/lab-05-static-website-accessed.png" alt="uploading files" >
----  
+
+---
 - We also test for the error page by removing index.html from the web container  
 
  <img src="screenshots/lab-5-error-page.png" alt="accessing error page" >
@@ -42,7 +43,7 @@
 
 ## Business Logic
 
-For simple marketing sites, documentation, or product landing pages in GCC companies, hosting on Azure Storage avoids over‑provisioning full web servers, reduces operational risk, and frees budget for core business workloads instead of basic web hosting.  
+- For simple marketing sites, documentation, or product landing pages , hosting on Azure Storage avoids over‑provisioning full web servers, reduces operational risk, and frees budget for core business workloads instead of basic web hosting.  
 ---
 
 ## Key Observation
