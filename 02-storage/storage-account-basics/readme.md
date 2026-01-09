@@ -2,7 +2,7 @@
 ### 1. Storage Account basics and its type
 ### 2. Different types of redundancy
 
-**Key Learning:** Inorder to use any storage service in Azure, we need to first create a storage account. This is unlike other cloud service providers where each storage service is individually managed. In Azure , all storage services are centrally managed using Azure Storage Account. 
+**Key pointer:** Inorder to use any storage service in Azure, we need to first create a storage account. This is unlike other cloud service providers where each storage service is individually managed. In Azure , all storage services are centrally managed using Azure Storage Account. 
 
 ### Azure Storage Services: Blob storage, File share/File storage, Table storage, Queue Storage
 
@@ -41,4 +41,44 @@ Use case: store semi‑structured, schema‑less data (telemetry, user metadata,
 - high‑performance page blobs used for Azure managed disks and I/O‑intensive workloads
 -  they deliver low latency, high IOPS, and durable random read/write access for VM disks and databases
 
-<img src="" alt="" >
+## Redundancy
+Azure Storage replicates data to protect against hardware failures, outages, and regional disasters; redundancy ensures durability and availability so applications keep running and data is recoverable.  
+
+**Redundancy types**  
+
+- LRS (Locally Redundant Storage): three copies within a single datacenter/region; lowest cost, protects against hardware failure.  
+- ZRS (Zone‑Redundant Storage): copies across availability zones in the same region; protects against datacenter/zone failures and offers higher availability.  
+- GRS (Geo‑Redundant Storage): replicates to a paired secondary region (async); protects against regional outages but secondary is not read‑accessible by default
+- GZRS: Replicates data across availability zones in the primary region and asynchronously to a secondary region, combining zone redundancy with geo‑replication for maximum durability and disaster recovery
+
+**Quick selection guide**
+- Use LRS for dev/test or cheap durability.  
+- Use ZRS for high availability within a region.  
+- Use GRS/GZRS for disaster recovery across regions
+
+<img src="screenshots/redundancy_type.png" alt="different types of redundancy" >
+
+## Creating a storage account (Standard General purpose V2)
+
+### Steps: Select subscription, resource group ,region,  Performance: Standard. Also we need to enter a unique name for the storage account which is unique across the entire AZURE platform
+### Here I have chosen region as South india .Since South India is a region with single AZ . Thus we have replication option of LRS and GRS only 
+<img src="screenshots/storage-account-creation.png" alt="storage account creation" >
+
+
+Since I created a standard general purpose V2 account, so it provides option to create all the four azure storage services.
+<img src="screenshots/landing-page-storage-account.png" alt="storage account " >
+
+
+Under the navigation panel, under the DATA MANAGEMENT option we can check for the redundancy associated with the account. Since I selected the primary region as South India, so the secondary region is automatically mapped to Central India.
+<img src="screenshots/south-india-mapped.png" alt="checking redundancy " >
+
+### Key learnings
+- ZRS and GZRS replication is allowed only if the primary region is the one with multiple AZs
+- In both GRS and GZRS replication , we can only select the primary region. The secondary region is automatically mapped with the primary region and is generally a region closest to the primary region.
+- In case of GRS and GZRS ,  the data replication from one region to another is asynchronous i.e. there is latency in data availability.
+- Test failover and recovery procedures regularly.  
+- Consider data residency and compliance when selecting geo‑replication.  
+
+**COMPLIANCE ISSUE* : In most cases the primary region and secondary region are in same country. However in some case if the country has just one Region , in such case the secondary region may be in another neighbouring country. This can lead to compliance issue if the organisation or the country has a strict data management rule which requires all data to be stored in the country itself.
+
+
