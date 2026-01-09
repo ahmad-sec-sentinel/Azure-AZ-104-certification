@@ -2,7 +2,7 @@
 ### 1. Storage Account basics and its type
 ### 2. Different types of redundancy
 
-Key Learning: Inorder to use any storage service in Azure, we need to first create a storage account. This is unlike other cloud service providers where each storage service is individually managed. In Azure , all storage services are centrally managed using Azure Storage Account. 
+**Key Learning:** Inorder to use any storage service in Azure, we need to first create a storage account. This is unlike other cloud service providers where each storage service is individually managed. In Azure , all storage services are centrally managed using Azure Storage Account. 
 
 ### Azure Storage Services: Blob storage, File share/File storage, Table storage, Queue Storage
 
@@ -38,3 +38,7 @@ Use case: store semi‑structured, schema‑less data (telemetry, user metadata,
 - Use case: for high performamce , when NFS based protocol is a necessity
   
 ### 4. Premium page blobs  
+- high‑performance page blobs used for Azure managed disks and I/O‑intensive workloads
+-  they deliver low latency, high IOPS, and durable random read/write access for VM disks and databases
+
+<img src="" alt="" >
