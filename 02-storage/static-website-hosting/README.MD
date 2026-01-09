@@ -27,7 +27,7 @@
  <img src="screenshots/lab-05-static-website-accessed.png" alt="uploading files" >
 
 ---
-- We also test for the error page by removing index.html from the web container  
+- **I also  tested for the error page by removing index.html from the web container. Then i pasted the URL into the browser and the error page gets loaded.**
 
  <img src="screenshots/lab-5-error-page.png" alt="accessing error page" >
 
