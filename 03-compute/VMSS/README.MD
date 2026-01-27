@@ -10,7 +10,7 @@ Azure Virtual Machine Scale Sets (VMSS) allows to run a group of identical, load
 
 ## Steps  Performed
 
-1. Created a new **Virtual Machine Scale Set** in the Azure portal in US East region. Under Avaialability zone I selected all three Zones. This ensures that the VMs launched automataically when demand increases are distributed across all three zones. This ensures high availability.  
+1. Created a new **Virtual Machine Scale Set** in the Azure portal in US East region. Under Availability zone I selected all three Zones. This ensures that the VMs  launched automatically when demand increases are distributed across all three zones. This ensures high availability.  
 <img src= "screenshots/vmss-creation-01.jpg">  
 
 2. Chose **Uniform orchestration**, selected an Ubuntu image, VM size, and configured admin credentials.  
@@ -49,6 +49,10 @@ Azure Virtual Machine Scale Sets (VMSS) allows to run a group of identical, load
 - **Autoscaling:** Azure monitors metrics (CPU, memory proxies, custom metrics) and automatically adjusts capacity based on rules, like the CPU-based policy I configured in this lab.
 
 ---
+## Query duration
+In an autoscale rule,it is the look‑back window Azure uses to decide whether to scale.  
+For example, if duration is 10 minutes, Azure checks the average CPU over the last 10 minutes rather than a single spike, then compares that to your threshold and triggers scale‑out or scale‑in if needed.  
+Conceptually, this protects  workloads from scaling because of short, noisy spikes and instead reacts to sustained demand, which is better for cost control and stability in production environments.  
 
 ## When to Use VMSS
 
