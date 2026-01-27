@@ -20,8 +20,19 @@ Azure Virtual Machine Scale Sets (VMSS) allows to run a group of identical, load
    - Maximum instances: **5**  
    - Scale out: when average CPU > **75%**, increase instance count by **1**  
    - Scale in: when average CPU < **25%**, decrease instance count by **1**  
-5. Deployed the VMSS and verified that instances appeared and were healthy.  
-6. Generated load to push CPU above and below thresholds and observed scale‑out and scale‑in behavior.  
+<img src= "screenshots/scaling-mode.jpg">
+<img src= "screenshots/scaling-policy-1.jpg">
+<img src= "screenshots/scaling-policy-02.jpg">
+
+
+
+5. Deployed the VMSS and verified that instances appeared and were healthy.    
+<img src= "screenshots/vmss-instances.jpg">  
+
+## Testing
+- I deleted the running instance and within a couple of minutes a new instance sprang up on its own  
+
+<img src= "screenshots/vmss-testing.jpg">
 
 ---
 
@@ -49,11 +60,15 @@ Azure Virtual Machine Scale Sets (VMSS) allows to run a group of identical, load
 ## Troubleshooting  
 
 **Problem faced** - While creating the VMSS, I was unable to use autoscaling feature. I was prompted to register the service Microsoft.insights.  
-**How I resolved the issue** - I opened my Subsription. From the navigation menu on the left I selected Resource provider under settings. then i searched for the service Microsoft.Insights and then registered it.  
+
+<img src= "screenshots/register-notification.jpg">
+
+**How I resolved the issue** - I opened my Subsription. From the navigation menu on the left I selected Resource provider under settings. Then i searched for the service Microsoft.Insights and then registered it.  
+<img src= "screenshots/ms-insights.jpg">
+
 
 ## Key Learnings
-
 - VMSS encourages thinking in terms of **capacity and policies**, not individual servers.  
 - Uniform orchestration simplifies operations for large, identical, stateless fleets, while Flexible mode is better when per‑VM customization is needed.  
-- A well‑designed autoscale policy directly affects **cost, reliability, and user experience**, which is critical for GCC organizations running customer‑facing applications under variable traffic patterns.
+- A well‑designed autoscale policy directly affects **cost, reliability, and user experience**, which is critical for  organizations running customer‑facing applications under variable traffic patterns.
 
