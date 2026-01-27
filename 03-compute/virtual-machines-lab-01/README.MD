@@ -12,21 +12,24 @@ This lab demonstrates how I provisioned both Linux and Windows virtual machines 
 
 **What I did**
 
-- Created a new virtual machine in the *West US* region using the Azure portal. Select the Appropriate subscription and Resource Group.  Under Availability Options I selected No infra redundancy required (The option of Availability zone is seen as disabled because West US is a region with Single Availability Zone)  
+- Created a new virtual machine in the *West US* region using the Azure portal. Select the Appropriate subscription and Resource Group.  Under Availability Options I selected No infra redundancy required (The option of Availability zone is seen as disabled because West US is a region with Single Availability Zone)   
 <img src="screenshots/vm-create.jpg">
 <img src="screenshots/vm-create-redundancy.jpg">
 
-**Note:On the left part of screen, we can also see the cost associated with the Virtual machine**
+**Note:On the left part of screen, we can also see the cost associated with the Virtual machine**  
 
 - Selected an Ubuntu Server image and an appropriate VM size for lab workloads.  On clicking on 'See all sizes' the various series of CPUs can be accessed and chosen based on the workload  
 <img src="screenshots/vm-create-size.jpg">
-- Configured admin credentials by selecting authentication type as password and enabled inbound SSH on port 22 .( For sake of simplicity we allowed SSH from anywhere as this VM is just for test purpose. We add tags and then Review and Create.  
-<img src="screenshots/vm-create-auth.jpg">
-- Once the VM is created I clicked on Connect from the Azure portal. From the next window I copied the SSH command which has the user name and the public IP of the Virtual machine.  
+- Configured admin credentials by selecting authentication type as password and enabled inbound SSH on port 22 .( For sake of simplicity we allowed SSH from anywhere as this VM is just for test purpose. We add tags and then Review and Create.   
+<img src="screenshots/vm-create-auth.jpg">  
+- Once the VM is created I clicked on Connect from the Azure portal. From the next window I copied the SSH command which has the user name and the public IP of the Virtual machine.   
 <img src="screenshots/vm-connect.jpg">
 <img src="screenshots/vm-ssh.jpg">
 - Verified connectivity by connecting from my terminal using the VM’s public IP with `ssh username@public-ip` and then entered the password which I had set while creating the VM.  
-<img src="screenshots/ssh-success.png">
+<img src="screenshots/ssh-success.png">  
+
+**Note: Once SSH is successful the prompt appears in the format <Username>@<VM-name>. This can be verified from the above image.**
+
 
 
 **Key learnings**
@@ -43,12 +46,18 @@ This lab demonstrates how I provisioned both Linux and Windows virtual machines 
 **What I did**
 
 - Provisioned a Windows Server VM in the same subscription for comparison and mixed‑OS scenarios.  
+<img src="screenshots/windows-vm.jpg">
 - Enabled RDP (port 3389) in the NSG and set a strong admin password.  
+<img src="screenshots/vm-nsg.jpg">
+<img src="screenshots/nsg-configure.jpg">
 - Connected from my workstation using Remote Desktop to validate login and basic management.  
 
+<img src="screenshots/rdp-connect.jpg">
+<img src="screenshots/rdp-password-connect.jpg">
+<img src="screenshots/windows-vm-2701.jpg">
 **Key learnings**
 
 - Linux (SSH) and Windows (RDP) require different access methods but follow the same Azure VM, networking, and NSG concepts.  
-- Choosing the right OS per workload (web, app, legacy line‑of‑business) directly affects licensing cost and operational effort for GCC organizations.
+- Choosing the right OS per workload (web, app, legacy line‑of‑business) directly affects licensing cost and operational effort for the organization.
 
 
