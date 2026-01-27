@@ -21,9 +21,9 @@ This lab demonstrates how I provisioned both Linux and Windows virtual machines 
 - Selected an Ubuntu Server image and an appropriate VM size for lab workloads.  On clicking on 'See all sizes' the various series of CPUs can be accessed and chosen based on the workload  
 <img src="screenshots/vm-create-size.jpg">  
 <img src="screenshots/vm-create-sizes.png"> 
-- Configured admin credentials by selecting authentication type as password and enabled inbound SSH on port 22 .( For sake of simplicity we allowed SSH from anywhere as this VM is just for test purpose. We add tags and then Review and Create.  
+- **Configured admin credentials by selecting authentication type as password and enabled inbound SSH on port 22 .( For sake of simplicity we allowed SSH from anywhere as this VM is just for test purpose. We add tags and then Review and Create.**  
 <img src="screenshots/vm-create-auth.jpg">  
-- Once the VM is created I clicked on Connect from the Azure portal. From the next window I copied the SSH command which has the user name and the public IP of the Virtual machine.   
+- **Once the VM is created I clicked on Connect from the Azure portal. From the next window I copied the SSH command which has the user name and the public IP of the Virtual machine.**   
 <img src="screenshots/vm-connect.jpg">  
 <img src="screenshots/vm-ssh.jpg">  
 - Verified connectivity by connecting from my terminal using the VM’s public IP with `ssh username@public-ip` and then entered the password which I had set while creating the VM.   
@@ -46,10 +46,10 @@ This lab demonstrates how I provisioned both Linux and Windows virtual machines 
 
 - Provisioned a Windows Server VM in the same subscription for comparison and mixed‑OS scenarios.  
 <img src="screenshots/windows-vm.jpg">  
-- Enabled RDP (port 3389) in the NSG and set a strong admin password.  
+- **Enabled RDP (port 3389) in the NSG and set a strong admin password.** 
 <img src="screenshots/vm-nsg.jpg">  
 <img src="screenshots/nsg-configure.jpg">  
-- Connected from my workstation using Remote Desktop to validate login and basic management.  
+- **Connected from my workstation using Remote Desktop to validate login and basic management.** 
 
 <img src="screenshots/rdp-connect.jpg">  
 <img src="screenshots/rdp-password-connect.jpg">  
