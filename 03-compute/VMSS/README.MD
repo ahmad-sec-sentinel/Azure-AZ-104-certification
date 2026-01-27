@@ -5,10 +5,14 @@
 In this lab I deployed a Virtual Machine Scale Set (VMSS) using **Uniform orchestration** and configured automatic scaling based on CPU. The goal was to learn how Azure scales stateless workloads horizontally without managing individual VMs.
 
 ---
+## About VMSS 
+Azure Virtual Machine Scale Sets (VMSS) allows to run a group of identical, load-balanced VMs that automatically scale in and out based on demand. They are ideal for stateless application  where traffic is unpredictable, because VMSS improves availability, keeps performance stable under load, and helps control cost by adding capacity only when required and removing it when demand drops
 
-## Steps I Performed
+## Steps  Performed
 
-1. Created a new **Virtual Machine Scale Set** in the Azure portal in my target region.  
+1. Created a new **Virtual Machine Scale Set** in the Azure portal in US East region. Under Avaialability zone I selected all three Zones. This ensures that the VMs launched automataically when demand increases are distributed across all three zones. This ensures high availability.  
+<img src= "screenshots/vmss-creation-01.jpg">  
+
 2. Chose **Uniform orchestration**, selected an Ubuntu image, VM size, and configured admin credentials.  
 3. Enabled load balancing and placed the VMSS behind an Azure Load Balancer so instances could share traffic.  
 4. Defined the **autoscale policy**:  
