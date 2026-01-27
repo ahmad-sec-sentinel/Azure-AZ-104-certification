@@ -26,13 +26,13 @@ This lab demonstrates how I provisioned both Linux and Windows virtual machines 
 <img src="screenshots/vm-connect.jpg">
 <img src="screenshots/vm-ssh.jpg">
 - Verified connectivity by connecting from my terminal using the VM’s public IP with `ssh username@public-ip` and then entered the password which I had set while creating the VM.  
-<img src="screenshots/vm-connected.jpg">
+<img src="screenshots/ssh-success.png">
 
 
 **Key learnings**
 
 - Region, image, size, and NSG rules together decide cost, performance, and security.  
-- Keeping SSH locked to specific IP ranges is critical in production, especially for regulated GCC customers.
+- Keeping SSH locked to specific IP ranges is critical in production to prevent unauthorized access and maintaining principle of least privilege. (In my lab, I had allowed SSH from anywhere for sake of testing)
 
 ---
 
