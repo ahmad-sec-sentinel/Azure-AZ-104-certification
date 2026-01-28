@@ -1,9 +1,32 @@
 # Lab: Peering Two VNets and Testing Private Connectivity
 **This lab also contains detailed process to create virtual network, adding subnet, configuring NSG and  establishing peering connection. This can be referred by anyone wanting to set up Virtual Networks**
 
+## Table of Contents
+- [Prerequisite](#prerequisite)
+- [Address Space Examples](#address-space-examples)
+- [Network architecture](#network-architecture)
+- [Implementation](#implementation)
+- [Why This Matters](#why-this-matters)
+- [Real production issue that this project can solve](#real-production-issue-that-this-project-can-solve)
+- [Real Production Use Case](#real-production-use-case)
+- [Key Learnings](#key-learnings)
+- [Next Step: Hardening with Azure Bastion](#next-step-hardening-with-azure-bastion)
+
+
 ## Prerequisite
 
 For VNet peering to work, the **address spaces must not overlap**. If two VNets share any part of the same CIDR range, Azure blocks peering because routing becomes ambiguous.
+
+## Address Space Examples
+
+| VNet-A CIDR    | VNet-B CIDR    | Overlap? | Peering Possible? |
+|----------------|----------------|----------|-------------------|
+| 10.0.0.0/16    | 10.1.0.0/16    | No       | Yes               |
+| 10.0.0.0/16    | 10.0.1.0/24    | Yes      | No                |
+| 10.10.0.0/20   | 10.20.0.0/20   | No       | Yes               |
+| 192.168.0.0/16 | 192.168.0.0/24 | Yes      | No                |
+
+Non-overlapping ranges are essential for clean routing between production, DR, and test networks hosted in different VNets.
 
 ---
 
@@ -39,13 +62,13 @@ For VNet peering to work, the **address spaces must not overlap**. If two VNets 
 <img src="screenshots/vm-india-nw.jpg">
 <img src="screenshots/Vm-India-nsg.jpg">
 
-- **Note- This is hiw the final Networking configuration of the Vm-India looks like**  
+- **Note- This is how the final Networking configuration of the Vm-India looks like**  
 <img src="screenshots/vm-India-final.png">
 
 - Finally validate and create . Once validation is passed, I clicked on create and the VM is deployed in Vnet-India. The Public and Private IPs can be seen. These IPs will be used later in the lab.
 <img src="screenshots/vm-India-IPs.jpg">
 
-- Similarly another VM is deployed in Vnet-USA Virtual Network which was created earlier in the lab.( inbound SSH on port 22 via NSGs is also configured). The public and private IPs of the Vm are taken note of.  
+- Similarly another VM is deployed in Vnet-USA Virtual Network which was created earlier in the lab.( inbound SSH on port 22 via NSG is also configured). The public and private IPs of the Vm are taken note of.  
 <img src="screenshots/vm-USA-final.jpg">
 
 ### Configuring Vnet peering
@@ -69,8 +92,6 @@ For VNet peering to work, the **address spaces must not overlap**. If two VNets 
 <img src="screenshots/ssh-success.jpg">  
 
 - Similarly connected to Vm-USA over SSH from the local terminal.  
-
-
 - Finally successfully **pinged the private IP** of Vm-USA FROM Vm-India to verify private, cross-region connectivity
 ```
 ping -c 5 <private IP of Vm-USA>
@@ -80,22 +101,11 @@ ping -c 5 <private IP of Vm-USA>
 ```
 ping -c 5 <private IP of Vm-india>
 ```
-
-
 <img src="screenshots/peering-test-pass.jpg">
 
 ---
 
-## Address Space Examples
 
-| VNet-A CIDR    | VNet-B CIDR    | Overlap? | Peering Possible? |
-|----------------|----------------|----------|-------------------|
-| 10.0.0.0/16    | 10.1.0.0/16    | No       | Yes               |
-| 10.0.0.0/16    | 10.0.1.0/24    | Yes      | No                |
-| 10.10.0.0/20   | 10.20.0.0/20   | No       | Yes               |
-| 192.168.0.0/16 | 192.168.0.0/24 | Yes      | No                |
-
-Non-overlapping ranges are essential for clean routing between production, DR, and test networks hosted in different VNets.
 
 ---
 
