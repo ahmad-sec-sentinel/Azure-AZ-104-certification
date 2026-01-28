@@ -7,7 +7,11 @@ For VNet peering to work, the **address spaces must not overlap**. If two VNets 
 
 ---
 
-## What I Implemented
+## Network architecture
+
+<img src="screenshots/peering.jpg">  
+
+## Implementation 
 
 - Created **VNet-India** in the *South India* region with two subnets: `subnet1` and `subnet2`.  The detailed steps are shown in below screenshots. The tab/option/row to be clicked or written into has been highlighted 
 <img src="screenshots/vnet-step1.jpg">
@@ -15,7 +19,7 @@ For VNet peering to work, the **address spaces must not overlap**. If two VNets 
 <img src="screenshots/vnet-ip-range.jpg">
 <img src="screenshots/vent-subnet2.jpg">
 
-**Azure automatically suggests CIDR for a subnet based on the CIDR of the Virtual network. 
+**Azure automatically suggests CIDR for a subnet based on the CIDR of the Virtual network.**  
 <img src="screenshots/vnet-final.jpg">
 
 **The Vnet-India is finally created and is available on the portal**
@@ -35,10 +39,10 @@ For VNet peering to work, the **address spaces must not overlap**. If two VNets 
 <img src="screenshots/vm-india-nw.jpg">
 <img src="screenshots/Vm-India-nsg.jpg">
 
-- **Note- This is hiw the final Networking configuration of the Vm-India looks like 
+- **Note- This is hiw the final Networking configuration of the Vm-India looks like**  
 <img src="screenshots/vm-India-final.png">
 
-- Finally we validate and create . Once validation is passed, I clicked on create and the VM is deployed in Vnet-India. The Public and Private IPs can be seen. These IPs will be used later in the lab.
+- Finally validate and create . Once validation is passed, I clicked on create and the VM is deployed in Vnet-India. The Public and Private IPs can be seen. These IPs will be used later in the lab.
 <img src="screenshots/vm-India-IPs.jpg">
 
 - Similarly another VM is deployed in Vnet-USA Virtual Network which was created earlier in the lab.( inbound SSH on port 22 via NSGs is also configured). The public and private IPs of the Vm are taken note of.  
@@ -53,19 +57,19 @@ For VNet peering to work, the **address spaces must not overlap**. If two VNets 
 **Note- Under the remote network settings, select the box to allow Vnet USA to access Vnet india. If this is not done, the peering connection will be unidirectional.Similarly do the same under local network settings**
 <img src="screenshots/peering-remote.jpg">
 
-**Local Virtual Network peering settings**
+**Local Virtual Network peering settings**  
+
 <img src="screenshots/local-peering.jpg">
 
 - From the portal , the peering connection can be seen for the two Virtual Networks
 <img src="screenshots/peering-check-1.jpg">  
 <img src="screenshots/peering-check-2.jpg">  
 
-
 - Connected to VM-India over SSH from the local terminal using the public IP of the VM.
 <img src="screenshots/ssh-success.jpg">  
 
 - Similarly connected to Vm-USA over SSH from the local terminal.  
-<img src="screenshots/ssh-success.jpg">  
+
 
 - Finally successfully **pinged the private IP** of Vm-USA FROM Vm-India to verify private, cross-region connectivity
 ```
@@ -78,7 +82,7 @@ ping -c 5 <private IP of Vm-india>
 ```
 
 
-<img src="screenshots/">
+<img src="screenshots/peering-test-pass.jpg">
 
 ---
 
