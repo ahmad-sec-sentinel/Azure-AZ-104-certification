@@ -1,5 +1,5 @@
 # Lab: Peering Two VNets and Testing Private Connectivity
-**This lab also contains detailed process to create virtual network, adding subnet, configuring NSG and  establishing peering connection. This can be referred by anyone wanting to set up Virtual Networks
+**This lab also contains detailed process to create virtual network, adding subnet, configuring NSG and  establishing peering connection. This can be referred by anyone wanting to set up Virtual Networks**
 
 ## Prerequisite
 
