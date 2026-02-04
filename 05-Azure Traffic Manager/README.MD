@@ -7,14 +7,18 @@
 ### 📋 Executive Summary
 Deployed globally distributed web app across **West US** and **South India** using **Azure Traffic Manager Performance routing**. Automatically routes users to **lowest-latency endpoint** while respecting regional data boundaries—critical for GCC compliance.
 
-### 🔧 Architecture Overview
-Global Users → Traffic Manager (Performance Routing)
-↓ HTTP Probes (port 80, /index.html)
-┌─────────────────────┬──────────────────────┐
-│ West US VM │ South India VM │
-│ Latency: 250ms │ Latency: 45ms │
-│ (apache2) │ (apache2) │
-└─────────────────────┴──────────────────────┘
+## 🔧 Architecture Overview
+
+```mermaid
+graph TB
+    A[🌐 Global Users] -->|DNS Resolution| B(Traffic Manager<br/>Performance Routing)
+    B -->|HTTP Health Probes<br/>port 80, /index.html| C(( ))
+    C --> D[West US VM<br/>Latency: 250ms<br/>Apache2 + Custom HTML]
+    C --> E[South India VM<br/>Latency: 45ms<br/>Apache2 + Custom HTML]
+    
+    style B fill:#1f77b4
+    style D fill:#ff7f0e
+    style E fill:#2ca02c
 
 - **Routing Method:** Performance (lowest latency wins)
 - **Health Probes:** HTTP GET / every 30s
