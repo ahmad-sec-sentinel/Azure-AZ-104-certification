@@ -9,16 +9,7 @@ Deployed globally distributed web app across **West US** and **South India** usi
 
 ## 🔧 Architecture Overview
 
-```mermaid
-graph TB
-    A[🌐 Global Users] -->|DNS Resolution| B(Traffic Manager<br/>Performance Routing)
-    B -->|HTTP Health Probes<br/>port 80, /index.html| C(( ))
-    C --> D[West US VM<br/>Latency: 250ms<br/>Apache2 + Custom HTML]
-    C --> E[South India VM<br/>Latency: 45ms<br/>Apache2 + Custom HTML]
-    
-    style B fill:#1f77b4
-    style D fill:#ff7f0e
-    style E fill:#2ca02c
+
 
 - **Routing Method:** Performance (lowest latency wins)
 - **Health Probes:** HTTP GET / every 30s
@@ -37,7 +28,7 @@ graph TB
 | **Subnet** | Client IP ranges | Corp VPN → Private endpoints |
 
 ### 🚀 Implementation Steps
-1. **VMs:** Ubuntu in West US + South India (Public IP + DNS labels)
+1. **VMs:** Ubuntu based VMs in West US + South India (Public IP + DNS labels)
 2. **Apache:** Custom `index.html` on both → HTTP 80 probes
 3. **Traffic Manager:** `global-web-tm` → **Performance** routing → South India wins (45ms from Delhi)
 
