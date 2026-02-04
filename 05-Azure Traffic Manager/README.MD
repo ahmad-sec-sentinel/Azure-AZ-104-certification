@@ -39,7 +39,7 @@ Deployed globally distributed web app across **West US** and **South India** usi
 
 
 
-💡 Real-World Impact (GCC Data Residency Compliant)
+💡 Real-World Impact (GCC Data Residency Compliant)  
 **1. Static Content (as per the Lab Pattern):** 
 
 
@@ -67,12 +67,12 @@ KSA Bank Users → Saudi Servers ONLY
 | **Failover**         | Intra-region health probes  | Global failover (30s TTL)         |
 | **Why LB Fails Here**| Can't route across regions | Fills gap with DNS intelligence   |
 
-**Load Balancer** works within one region (e.g., West US only). For **cross-region** like US-India, Traffic Manager's DNS layer resolves the right IP based on user location/health—essential for true global HA.
+**Load Balancer** works within one region (e.g., West US only). For **cross-region** like US-India, Traffic Manager's DNS layer resolves the right IP based on user location/health—essential for true global HA.  
 
 
-### 🏆 Business Value
-- **Cost-Efficient HA:** Pay only for healthy regions.
-- **Scales to Multi-Cloud:** Add non-Azure endpoints.
-- **GCC-Ready:** Supports sovereign clouds, low-latency routing for Middle East users.
+### 🏆 Business Value  
+- **Cost-Efficient HA:** Pay only for healthy regions.  
+- **Scales to Multi-Cloud:** Add non-Azure endpoints.  
+- **GCC-Ready:** Supports sovereign clouds, low-latency routing for Middle East users.  
 
-**🔗 Demo:** `global-web-tm.trafficmanager.net` | **IaC:** [GitHub]
+**🔗 Demo:** `global-web-tm.trafficmanager.net` | 
