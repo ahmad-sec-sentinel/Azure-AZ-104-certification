@@ -48,8 +48,6 @@ Qatar Shopping App → UAE Central Server (25ms)
 -  Customer data stays in Qatar database (Compliant)
 -  Result: Fast pages + local data storage
 **2. Enterprise Dashboards:**
-
-
 Saudi Logistics → UAE Central (Backup)
 -  Shows: Truck locations, delivery times (No personal data)
 -  Customer info stays in Saudi database ✓
