@@ -46,16 +46,16 @@ Deployed globally distributed web app across **West US** and **South India** usi
 Qatar Shopping App → UAE Central Server (25ms)
 -  Loads: Product images, CSS, JavaScript ✓
 -  Customer data stays in Qatar database (Compliant)
--  Result: Fast pages + local data storage
-**2. Enterprise Dashboards:**
-Saudi Logistics → UAE Central (Backup)
--  Shows: Truck locations, delivery times (No personal data)
--  Customer info stays in Saudi database ✓
-**3. Banking (Strict Rules):**
+-  Result: Fast pages + local data storage  
+**2. Enterprise Dashboards:**  
+Saudi Logistics → UAE Central (Backup)  
+-  Shows: Truck locations, delivery times (No personal data)  
+-  Customer info stays in Saudi database ✓  
+**3. Banking (Strict Rules):**  
 
-KSA Bank Users → Saudi Servers ONLY
--  Geographic routing blocks cross-border traffic
--  100% PDPL compliant
+KSA Bank Users → Saudi Servers ONLY  
+-  Geographic routing blocks cross-border traffic  
+-  100% PDPL compliant  
 
 ### ⚖️ Traffic Manager vs. Load Balancer: The Critical Gap
 | Feature              | Azure Load Balancer          | Azure Traffic Manager              |
